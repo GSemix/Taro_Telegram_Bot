@@ -1,0 +1,57 @@
+/* Стили для основного контейнера страницы */
+body {
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+	/*color: var(--tg-theme-text-color);*/
+	/*background: var(--tg-theme-bg-color);*/
+	background: #1C1C1C; /* Цвет фона страницы */
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+/* Стили для заголовка */
+.title {
+	margin-left: 20px;
+	margin-bottom: 30px;
+	color: #ffffff; /* Белый цвет текста */
+}
+
+/* Стили для контейнера с внутренними картами */
+.inner-cards {
+	margin: 10px 10px;
+	display: grid;
+	width: auto;
+	grid-gap: 16px;
+	grid-template-columns: repeat(2, 1fr); /* Грид с двумя колонками */
+	grid-auto-flow: row;
+	justify-items: center;
+}
+
+/* Стили для карточки */
+.card {
+	height: 10vh;
+  width: 39vw;
+  line-height: 10vh;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/* Стили для описания на карточке */
+.card-description {
+	display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 39vw;
+  line-height: 19px; /* <-- adjust this */
+
+  font-family: 'Inter';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 16px;
+	color: #ffffff; /* Белый цвет текста */
+}
+
+
+
+
