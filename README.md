@@ -20,8 +20,8 @@ Requires [Python](https://www.python.org/downloads/release/python-3100/) v3.8+ t
 Install the dependencies:
 
 ```sh
-git clone git@github.com:GSemix/Cyber_Security_Telegram_Bot.git
-cd Cyber_Security_Telegram_Bot
+git clone git@github.com:GSemix/Taro_Telegram_Bot.git
+cd Taro_Telegram_Bot
 python3 -m venv venv
 . venv/bin/active
 pip3 install -r requirements.txt
