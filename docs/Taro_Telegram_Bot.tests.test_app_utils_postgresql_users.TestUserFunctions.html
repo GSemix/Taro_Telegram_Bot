@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions</title>
+    <meta name="generator" content="pydoctor 23.9.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          Taro_Telegram_Bot <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="search-help-button" title="Help" onclick="toggleSearchHelpText()"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div class="hint" id="search-help-box">
+          <p class="rst-last">
+      
+            Search bar offers the following options:
+            <ul>   
+                <li>
+                  <strong>Term presence.</strong> The below example searches for documents that 
+                    must contain “foo”, might contain “bar” and must not contain “baz”: <code>+foo bar -baz</code>
+                </li> 
+
+                <li>
+                  <strong>Wildcards.</strong> The below example searches for documents with words beginning with “foo”: <code>foo*</code>
+                </li> 
+
+                <li>
+                  <strong>Search in specific fields.</strong> The following search matches all objects 
+                  in "twisted.mail" that matches “search”: <code>+qname:twisted.mail.* +search</code>
+
+                  <p>
+                    Possible fields: 'name', 'qname' (fully qualified name), 'docstring', and 'kind'.
+                    Last two fields are only applicable if "search in docstrings" is enabled.
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Fuzzy matches.</strong> The following search matches all documents 
+                  that have a word within 1 edit distance of “foo”: <code>foo~1</code>
+                </li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 8px;">
+          <p>Results provided by <a href="https://lunrjs.com">Lunr.js</a></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.html" class="internal-link" title="This class"><wbr></wbr>Test<wbr></wbr>User<wbr></wbr>Functions</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#asyncSetUp" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.asyncSetUp">async<wbr></wbr>Set<wbr></wbr>Up</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_state" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_state">test<wbr></wbr>_get<wbr></wbr>_state</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_user_by_id" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_user_by_id">test<wbr></wbr>_get<wbr></wbr>_user<wbr></wbr>_by<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_inState" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_inState">test_in<wbr></wbr>State</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_isAccess" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAccess">test_is<wbr></wbr>Access</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_isAdmin" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAdmin">test_is<wbr></wbr>Admin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_isState" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isState">test_is<wbr></wbr>State</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_set_user" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_set_user">test<wbr></wbr>_set<wbr></wbr>_user</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_update_user" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_update_user">test<wbr></wbr>_update<wbr></wbr>_user</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mock_db" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.mock_db">mock<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#user_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.user_data">user<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.html" class="internal-link" title="The parent of this class">test<wbr></wbr>_app<wbr></wbr>_utils<wbr></wbr>_postgresql<wbr></wbr>_users</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions"><wbr></wbr>Test<wbr></wbr>User<wbr></wbr>Functions</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">Taro_Telegram_Bot</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.html" class="internal-link" title="Taro_Telegram_Bot.tests">tests</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users">test_app_utils_postgresql_users</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions">TestUserFunctions</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">TestUserFunctions</span>(unittest.IsolatedAsyncioTestCase):</code></p>
+          <p><a href="classIndex.html#Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Class for testing auxiliary table user's functions</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id86">
+  
+  
+  <tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#asyncSetUp" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.asyncSetUp">async<wbr></wbr>Set<wbr></wbr>Up</a></code></td>
+    <td>Called at the beginning of each function for testing</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_get_state" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_state">test<wbr></wbr>_get<wbr></wbr>_state</a></code></td>
+    <td>Check user's state</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_get_user_by_id" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_user_by_id">test<wbr></wbr>_get<wbr></wbr>_user<wbr></wbr>_by<wbr></wbr>_id</a></code></td>
+    <td>Check find user's row by id</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_inState" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_inState">test_in<wbr></wbr>State</a></code></td>
+    <td>Check for a certain value in the user state</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_isAccess" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAccess">test_is<wbr></wbr>Access</a></code></td>
+    <td>Check user's access</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_isAdmin" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAdmin">test_is<wbr></wbr>Admin</a></code></td>
+    <td>Check user's admin status</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_isState" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isState">test_is<wbr></wbr>State</a></code></td>
+    <td>Check user's state compliance</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_set_user" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_set_user">test<wbr></wbr>_set<wbr></wbr>_user</a></code></td>
+    <td>Check try add user's row</td>
+  </tr><tr class="method">
+    
+    <td>Async Method</td>
+    <td><code><a href="#test_update_user" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_update_user">test<wbr></wbr>_update<wbr></wbr>_user</a></code></td>
+    <td>Check update user's row</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#mock_db" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.mock_db">mock<wbr></wbr>_db</a></code></td>
+    <td>Async mock PostgreSQL data base</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#user_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.user_data">user<wbr></wbr>_data</a></code></td>
+    <td>Example user's data</td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.asyncSetUp">
+    
+  </a>
+  <a name="asyncSetUp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">asyncSetUp</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#asyncSetUp" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.asyncSetUp">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Called at the beginning of each function for testing</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_state">
+    
+  </a>
+  <a name="test_get_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_get_state</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_state" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_state">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check user's state</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_user_by_id">
+    
+  </a>
+  <a name="test_get_user_by_id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_get_user_by_id</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_user_by_id" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_get_user_by_id">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check find user's row by id</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_inState">
+    
+  </a>
+  <a name="test_inState">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_inState</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_inState" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_inState">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check for a certain value in the user state</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAccess">
+    
+  </a>
+  <a name="test_isAccess">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_isAccess</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_isAccess" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAccess">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check user's access</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAdmin">
+    
+  </a>
+  <a name="test_isAdmin">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_isAdmin</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_isAdmin" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isAdmin">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check user's admin status</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isState">
+    
+  </a>
+  <a name="test_isState">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_isState</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_isState" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_isState">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check user's state compliance</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_set_user">
+    
+  </a>
+  <a name="test_set_user">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_set_user</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_set_user" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_set_user">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check try add user's row</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_update_user">
+    
+  </a>
+  <a name="test_update_user">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">async def</span> <span class="py-defname">test_update_user</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_update_user" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.test_update_user">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check update user's row</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.mock_db">
+    
+  </a>
+  <a name="mock_db">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mock_db</span>: AsyncMock =
+    
+    <a class="headerLink" href="#mock_db" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.mock_db">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Async mock PostgreSQL data base</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.user_data">
+    
+  </a>
+  <a name="user_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">user_data</span>: Dict[str, Any] =
+    
+    <a class="headerLink" href="#user_data" title="Taro_Telegram_Bot.tests.test_app_utils_postgresql_users.TestUserFunctions.user_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Example user's data</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for Taro_Telegram_Bot,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    23.9.1 at 2023-12-18 07:18:08.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

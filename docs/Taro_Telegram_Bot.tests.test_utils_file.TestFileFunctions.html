@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions</title>
+    <meta name="generator" content="pydoctor 23.9.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          Taro_Telegram_Bot <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="search-help-button" title="Help" onclick="toggleSearchHelpText()"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div class="hint" id="search-help-box">
+          <p class="rst-last">
+      
+            Search bar offers the following options:
+            <ul>   
+                <li>
+                  <strong>Term presence.</strong> The below example searches for documents that 
+                    must contain “foo”, might contain “bar” and must not contain “baz”: <code>+foo bar -baz</code>
+                </li> 
+
+                <li>
+                  <strong>Wildcards.</strong> The below example searches for documents with words beginning with “foo”: <code>foo*</code>
+                </li> 
+
+                <li>
+                  <strong>Search in specific fields.</strong> The following search matches all objects 
+                  in "twisted.mail" that matches “search”: <code>+qname:twisted.mail.* +search</code>
+
+                  <p>
+                    Possible fields: 'name', 'qname' (fully qualified name), 'docstring', and 'kind'.
+                    Last two fields are only applicable if "search in docstrings" is enabled.
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Fuzzy matches.</strong> The following search matches all documents 
+                  that have a word within 1 edit distance of “foo”: <code>foo~1</code>
+                </li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 8px;">
+          <p>Results provided by <a href="https://lunrjs.com">Lunr.js</a></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.html" class="internal-link" title="This class"><wbr></wbr>Test<wbr></wbr>File<wbr></wbr>Functions</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setUp" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.setUp">set<wbr></wbr>Up</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#tearDown" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.tearDown">tear<wbr></wbr>Down</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_convert_json_data_to_key_int" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_convert_json_data_to_key_int">test<wbr></wbr>_convert<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_to<wbr></wbr>_key<wbr></wbr>_int</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data">test<wbr></wbr>_get<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data_file_not_found_error">test<wbr></wbr>_get<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_json_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_json_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_file_not_found_error">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_json_data_with_int_keys" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_with<wbr></wbr>_int<wbr></wbr>_keys</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_get_json_data_with_int_keys_key_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys_key_error">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_with<wbr></wbr>_int<wbr></wbr>_keys<wbr></wbr>_key<wbr></wbr>_error</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_set_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data">test<wbr></wbr>_set<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_set_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data_file_not_found_error">test<wbr></wbr>_set<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_write_json_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data">test<wbr></wbr>_write<wbr></wbr>_json<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_write_json_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data_file_not_found_error">test<wbr></wbr>_write<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_json_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_json_data">sample<wbr></wbr>_json<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_text_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_text_data">sample<wbr></wbr>_text<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_json_file" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_json_file">test<wbr></wbr>_json<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_text_file" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_text_file">test<wbr></wbr>_text<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="Taro_Telegram_Bot.tests.test_utils_file.html" class="internal-link" title="The parent of this class">test<wbr></wbr>_utils<wbr></wbr>_file</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions"><wbr></wbr>Test<wbr></wbr>File<wbr></wbr>Functions</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">Taro_Telegram_Bot</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.html" class="internal-link" title="Taro_Telegram_Bot.tests">tests</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.test_utils_file.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file">test_utils_file</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions">TestFileFunctions</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">TestFileFunctions</span>(unittest.TestCase):</code></p>
+          <p><a href="classIndex.html#Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Class for testing auxiliary functions for files</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id88">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setUp" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.setUp">set<wbr></wbr>Up</a></code></td>
+    <td>Called at the beginning of each function for testing</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tearDown" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.tearDown">tear<wbr></wbr>Down</a></code></td>
+    <td>Clean up after running tests</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_convert_json_data_to_key_int" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_convert_json_data_to_key_int">test<wbr></wbr>_convert<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_to<wbr></wbr>_key<wbr></wbr>_int</a></code></td>
+    <td>Check convert keys of dict from temp json file</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_get_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data">test<wbr></wbr>_get<wbr></wbr>_data</a></code></td>
+    <td>Check getting data from text temp file</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_get_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data_file_not_found_error">test<wbr></wbr>_get<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code></td>
+    <td>Check getting data from text temp file if FileNotFoundError</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_get_json_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data</a></code></td>
+    <td>Check json data from temp jeon file</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_get_json_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_file_not_found_error">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code></td>
+    <td>Check getting json data from temp file if FileNotFoundError</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_get_json_data_with_int_keys" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_with<wbr></wbr>_int<wbr></wbr>_keys</a></code></td>
+    <td>Check getting keys of dict from temp json file</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_get_json_data_with_int_keys_key_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys_key_error">test<wbr></wbr>_get<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_with<wbr></wbr>_int<wbr></wbr>_keys<wbr></wbr>_key<wbr></wbr>_error</a></code></td>
+    <td>Check getting json data from temp file with int keys if ValueError</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_set_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data">test<wbr></wbr>_set<wbr></wbr>_data</a></code></td>
+    <td>Check writing data to temp text file</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_set_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data_file_not_found_error">test<wbr></wbr>_set<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code></td>
+    <td>Check writing data to text temp file if FileNotFoundError</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_write_json_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data">test<wbr></wbr>_write<wbr></wbr>_json<wbr></wbr>_data</a></code></td>
+    <td>Check writing json data in temp file</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_write_json_data_file_not_found_error" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data_file_not_found_error">test<wbr></wbr>_write<wbr></wbr>_json<wbr></wbr>_data<wbr></wbr>_file<wbr></wbr>_not<wbr></wbr>_found<wbr></wbr>_error</a></code></td>
+    <td>Check writing json data to temp file if FileNotFoundError</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#sample_json_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_json_data">sample<wbr></wbr>_json<wbr></wbr>_data</a></code></td>
+    <td>Example of json</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#sample_text_data" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_text_data">sample<wbr></wbr>_text<wbr></wbr>_data</a></code></td>
+    <td>Example of text</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#test_json_file" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_json_file">test<wbr></wbr>_json<wbr></wbr>_file</a></code></td>
+    <td>Name of json temp file for testing</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#test_text_file" class="internal-link" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_text_file">test<wbr></wbr>_text<wbr></wbr>_file</a></code></td>
+    <td>Name of test text temp file for testing</td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.setUp">
+    
+  </a>
+  <a name="setUp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setUp</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#setUp" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.setUp">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Called at the beginning of each function for testing</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.tearDown">
+    
+  </a>
+  <a name="tearDown">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tearDown</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#tearDown" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.tearDown">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clean up after running tests</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_convert_json_data_to_key_int">
+    
+  </a>
+  <a name="test_convert_json_data_to_key_int">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_convert_json_data_to_key_int</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_convert_json_data_to_key_int" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_convert_json_data_to_key_int">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check convert keys of dict from temp json file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data">
+    
+  </a>
+  <a name="test_get_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_get_data</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_data" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check getting data from text temp file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data_file_not_found_error">
+    
+  </a>
+  <a name="test_get_data_file_not_found_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_get_data_file_not_found_error</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_data_file_not_found_error" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_data_file_not_found_error">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check getting data from text temp file if FileNotFoundError</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data">
+    
+  </a>
+  <a name="test_get_json_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_get_json_data</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_json_data" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check json data from temp jeon file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_file_not_found_error">
+    
+  </a>
+  <a name="test_get_json_data_file_not_found_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_get_json_data_file_not_found_error</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_json_data_file_not_found_error" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_file_not_found_error">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check getting json data from temp file if FileNotFoundError</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys">
+    
+  </a>
+  <a name="test_get_json_data_with_int_keys">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_get_json_data_with_int_keys</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_json_data_with_int_keys" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check getting keys of dict from temp json file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys_key_error">
+    
+  </a>
+  <a name="test_get_json_data_with_int_keys_key_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_get_json_data_with_int_keys_key_error</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_get_json_data_with_int_keys_key_error" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_get_json_data_with_int_keys_key_error">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check getting json data from temp file with int keys if ValueError</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data">
+    
+  </a>
+  <a name="test_set_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_set_data</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_set_data" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check writing data to temp text file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data_file_not_found_error">
+    
+  </a>
+  <a name="test_set_data_file_not_found_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_set_data_file_not_found_error</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_set_data_file_not_found_error" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_set_data_file_not_found_error">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check writing data to text temp file if FileNotFoundError</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data">
+    
+  </a>
+  <a name="test_write_json_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_write_json_data</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_write_json_data" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check writing json data in temp file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data_file_not_found_error">
+    
+  </a>
+  <a name="test_write_json_data_file_not_found_error">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_write_json_data_file_not_found_error</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_write_json_data_file_not_found_error" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_write_json_data_file_not_found_error">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check writing json data to temp file if FileNotFoundError</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_json_data">
+    
+  </a>
+  <a name="sample_json_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sample_json_data</span>: <code>dict[<wbr></wbr>str, <wbr></wbr>str]</code> =
+    
+    <a class="headerLink" href="#sample_json_data" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_json_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Example of json</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_text_data">
+    
+  </a>
+  <a name="sample_text_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sample_text_data</span>: str =
+    
+    <a class="headerLink" href="#sample_text_data" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.sample_text_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Example of text</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_json_file">
+    
+  </a>
+  <a name="test_json_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">test_json_file</span>: str =
+    
+    <a class="headerLink" href="#test_json_file" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_json_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Name of json temp file for testing</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_text_file">
+    
+  </a>
+  <a name="test_text_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">test_text_file</span>: str =
+    
+    <a class="headerLink" href="#test_text_file" title="Taro_Telegram_Bot.tests.test_utils_file.TestFileFunctions.test_text_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Name of test text temp file for testing</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for Taro_Telegram_Bot,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    23.9.1 at 2023-12-18 07:18:08.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

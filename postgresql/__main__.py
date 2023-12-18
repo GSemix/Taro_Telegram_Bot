@@ -1,5 +1,8 @@
 """
 Testing ClientPotgreSQL
+
+:var loop: Event Loop Object
+:type loop: asyncio.unix_events._UnixSelectorEventLoop
 """
 
 from typing import Dict
@@ -7,12 +10,19 @@ from typing import Any
 from typing import List
 from json import dumps
 
-from . import ClientPotgreSQL
+from . import ClientPostgreSQL
 from . import default_postgresql_cfg
 from . import default_postgres_logger_cfg
 from .core.logger import get_logger
 
-def user():
+def user() -> Dict[str, Any]:
+	"""
+	Func for getting user struct
+
+	:return: User's struct
+	:rtype: Dict[str, Any]
+	"""
+
 	return {
 		'id': 0,
 		'username': 'username',
@@ -23,7 +33,14 @@ def user():
 		'state': 'main'
     }
 
-def table_test_users(): 
+def table_test_users() -> Dict[str, Any]:
+	"""
+	Func for getting user struct
+
+	:return: User's struct
+	:rtype: Dict[str, Any]
+	"""
+
 	return {
 		"table": "test_users",
 		"columns": [
@@ -37,9 +54,13 @@ def table_test_users():
 		]
 	}
 
-async def main():
+async def main() -> None:
+	"""
+	Func for starting
+	"""
+
 	logger = get_logger(**default_postgres_logger_cfg.dict())
-	bd = ClientPotgreSQL(default_postgresql_cfg.dict(), logger)
+	bd = ClientPostgreSQL(default_postgresql_cfg.dict(), logger)
 	await bd.create_pool()
 
 	try:

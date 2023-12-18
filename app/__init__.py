@@ -38,7 +38,7 @@ from .core.config import PostgreSQLConfig
 from .core.config import ProxyConfig
 from .core.config import OpenAIConfig
 from .core.logger import get_logger
-from postgresql import ClientPotgreSQL
+from postgresql import ClientPostgreSQL
 from utils.helper import get_log
 from .utils.templates.users import table_users
 
@@ -57,12 +57,12 @@ async def set_default_commands(dp: Dispatcher):
         ]
     )
 
-async def start_bd(bd_var: ClientPotgreSQL):
+async def start_bd(bd_var: ClientPostgreSQL):
     """
     Asynchronously starts the PostgreSQL database connection and performs initial setup
 
     :param bd_var: An instance of the ClientPotgreSQL class representing the PostgreSQL database.
-    :type bd_var: ClientPotgreSQL    
+    :type bd_var: ClientPostgreSQL    
     """
 
     await bd_var.create_pool()
@@ -77,7 +77,7 @@ async def on_startup(dp: Dispatcher):
     """
 
     await start_bd(bd_var = bd)
-    #await bot.set_webhook(telegram_cfg.webhook_url.get_secret_value())
+    await bot.set_webhook(telegram_cfg.webhook_url.get_secret_value()) # Comment this line for polling !!!
     await set_default_commands(dp)
     logger.info(get_log('=', "<-START->"))
 
@@ -91,13 +91,13 @@ async def on_shutdown(dp: Dispatcher):
 
     await bd.close_pool()
     await dp.bot.close_tasks()
-    #await bot.delete_webhook()
+    await bot.delete_webhook() # Comment this line for polling !!!
     logger.info(get_log('=', "<-STOP->"))
 
 postgresql_cfg = PostgreSQLConfig()
 postgres_logger_cfg = PostgreSQLLoggingConfig()
 postgres_logger = get_logger(**postgres_logger_cfg.dict())
-bd = ClientPotgreSQL(postgresql_cfg.dict(), postgres_logger)
+bd = ClientPostgreSQL(postgresql_cfg.dict(), postgres_logger)
 
 telegram_cfg = TelegramConfig()
 telegram_logger_cfg = TelegramLoggingConfig()

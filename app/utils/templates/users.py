@@ -4,6 +4,7 @@ Users table and struct
 
 from typing import Dict
 from typing import Any
+from typing import List
 
 # Функция возвращает шаблон для пользователя в виде словаря
 
@@ -25,7 +26,7 @@ def json_user() -> Dict[str, Any]:
 
 # Функция возвращает название и колонки с типами для таблицы пользователей
 
-def table_users() -> Dict[str, str]:
+def table_users() -> Dict[str, List[str]]:
     """
     Returns a dictionary template for creating a users table in a database.
 

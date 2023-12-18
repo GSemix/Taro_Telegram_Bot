@@ -23,7 +23,7 @@ handler_command_help_setup(dp)
 handler_messages_text_setup(dp)
 handler_messages_web_app_data(dp)
 
-'''start_webhook(
+start_webhook(
 	dispatcher=dp,
 	webhook_path=telegram_cfg.webhook_path.get_secret_value(),
 	on_startup=on_startup,
@@ -31,8 +31,9 @@ handler_messages_web_app_data(dp)
 	skip_updates=True,
 	host=telegram_cfg.webapp_host.get_secret_value(),
 	port=int(telegram_cfg.webapp_port.get_secret_value()),
-)'''
-executor.start_polling(dp, on_startup=on_startup, on_shutdown=on_shutdown, skip_updates=True)
+) # Comment this for polling !!!
+
+#executor.start_polling(dp, on_startup=on_startup, on_shutdown=on_shutdown, skip_updates=True) # Uncomment this line for polling !!!
 
 
 

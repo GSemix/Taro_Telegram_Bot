@@ -8,4 +8,4 @@ Module for creating a BD object
 #from .core.config import DefaultPostgreSQLConfig
 #default_postgresql_cfg = DefaultPostgreSQLConfig()
 
-from .model import ClientPotgreSQL
+from .model import ClientPostgreSQL

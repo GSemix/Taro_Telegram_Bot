@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger</title>
+    <meta name="generator" content="pydoctor 23.9.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          Taro_Telegram_Bot <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="search-help-button" title="Help" onclick="toggleSearchHelpText()"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div class="hint" id="search-help-box">
+          <p class="rst-last">
+      
+            Search bar offers the following options:
+            <ul>   
+                <li>
+                  <strong>Term presence.</strong> The below example searches for documents that 
+                    must contain “foo”, might contain “bar” and must not contain “baz”: <code>+foo bar -baz</code>
+                </li> 
+
+                <li>
+                  <strong>Wildcards.</strong> The below example searches for documents with words beginning with “foo”: <code>foo*</code>
+                </li> 
+
+                <li>
+                  <strong>Search in specific fields.</strong> The following search matches all objects 
+                  in "twisted.mail" that matches “search”: <code>+qname:twisted.mail.* +search</code>
+
+                  <p>
+                    Possible fields: 'name', 'qname' (fully qualified name), 'docstring', and 'kind'.
+                    Last two fields are only applicable if "search in docstrings" is enabled.
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Fuzzy matches.</strong> The following search matches all documents 
+                  that have a word within 1 edit distance of “foo”: <code>foo~1</code>
+                </li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 8px;">
+          <p>Results provided by <a href="https://lunrjs.com">Lunr.js</a></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.html" class="internal-link" title="This class"><wbr></wbr>Test<wbr></wbr>Logger</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setUp" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.setUp">set<wbr></wbr>Up</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#tearDown" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.tearDown">tear<wbr></wbr>Down</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_invalid_file_path" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_file_path">test<wbr></wbr>_invalid<wbr></wbr>_file<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_invalid_logging_level" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_logging_level">test<wbr></wbr>_invalid<wbr></wbr>_logging<wbr></wbr>_level</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_logger_creation" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_creation">test<wbr></wbr>_logger<wbr></wbr>_creation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_logger_formatter" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_formatter">test<wbr></wbr>_logger<wbr></wbr>_formatter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_logger_handlers" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_handlers">test<wbr></wbr>_logger<wbr></wbr>_handlers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_logger_level" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_level">test<wbr></wbr>_logger<wbr></wbr>_level</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_logger_max_bytes_and_backup_count" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_max_bytes_and_backup_count">test<wbr></wbr>_logger<wbr></wbr>_max<wbr></wbr>_bytes<wbr></wbr>_and<wbr></wbr>_backup<wbr></wbr>_count</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#test_logger_name" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_name">test<wbr></wbr>_logger<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#backup_count" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.backup_count">backup<wbr></wbr>_count</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#datefmt" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.datefmt">datefmt</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#fmt" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.fmt">fmt</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#level" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.level">level</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#max_bytes" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.max_bytes">max<wbr></wbr>_bytes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#name" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.name">name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#path" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.path">path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#temp_dir" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.temp_dir">temp<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="Taro_Telegram_Bot.tests.test_app_core_logger.html" class="internal-link" title="The parent of this class">test<wbr></wbr>_app<wbr></wbr>_core<wbr></wbr>_logger</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger"><wbr></wbr>Test<wbr></wbr>Logger</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">Taro_Telegram_Bot</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.html" class="internal-link" title="Taro_Telegram_Bot.tests">tests</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.test_app_core_logger.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger">test_app_core_logger</a></code><wbr></wbr>.<code><a href="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.html" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger">TestLogger</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">TestLogger</span>(unittest.TestCase):</code></p>
+          <p><a href="classIndex.html#Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Class for testing logger</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id84">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setUp" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.setUp">set<wbr></wbr>Up</a></code></td>
+    <td>Called at the beginning of each function for testing</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tearDown" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.tearDown">tear<wbr></wbr>Down</a></code></td>
+    <td>Clean up after running tests</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_invalid_file_path" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_file_path">test<wbr></wbr>_invalid<wbr></wbr>_file<wbr></wbr>_path</a></code></td>
+    <td>Check invalid logger's path</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_invalid_logging_level" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_logging_level">test<wbr></wbr>_invalid<wbr></wbr>_logging<wbr></wbr>_level</a></code></td>
+    <td>Check invalid logger's level</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_logger_creation" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_creation">test<wbr></wbr>_logger<wbr></wbr>_creation</a></code></td>
+    <td>Check creation logger</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_logger_formatter" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_formatter">test<wbr></wbr>_logger<wbr></wbr>_formatter</a></code></td>
+    <td>Check logger's ftm</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_logger_handlers" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_handlers">test<wbr></wbr>_logger<wbr></wbr>_handlers</a></code></td>
+    <td>Check logger's handlers</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_logger_level" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_level">test<wbr></wbr>_logger<wbr></wbr>_level</a></code></td>
+    <td>Check logger's level</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_logger_max_bytes_and_backup_count" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_max_bytes_and_backup_count">test<wbr></wbr>_logger<wbr></wbr>_max<wbr></wbr>_bytes<wbr></wbr>_and<wbr></wbr>_backup<wbr></wbr>_count</a></code></td>
+    <td>Check logger's max_bytes and backup_count</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_logger_name" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_name">test<wbr></wbr>_logger<wbr></wbr>_name</a></code></td>
+    <td>Check logger's name</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#backup_count" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.backup_count">backup<wbr></wbr>_count</a></code></td>
+    <td>Maximum number of files</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#datefmt" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.datefmt">datefmt</a></code></td>
+    <td>Time format</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#fmt" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.fmt">fmt</a></code></td>
+    <td>Log message format</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#level" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.level">level</a></code></td>
+    <td>Minimum level for creating a log</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.logger">logger</a></code></td>
+    <td>Object for logging</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#max_bytes" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.max_bytes">max<wbr></wbr>_bytes</a></code></td>
+    <td>Maximum file size in bytes</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.name">name</a></code></td>
+    <td>Name of the log file</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#path" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.path">path</a></code></td>
+    <td>Path of the log files</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#temp_dir" class="internal-link" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.temp_dir">temp<wbr></wbr>_dir</a></code></td>
+    <td>tempfile.TemporaryDirectory</td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.setUp">
+    
+  </a>
+  <a name="setUp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setUp</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#setUp" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.setUp">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Called at the beginning of each function for testing</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.tearDown">
+    
+  </a>
+  <a name="tearDown">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tearDown</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#tearDown" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.tearDown">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clean up after running tests</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_file_path">
+    
+  </a>
+  <a name="test_invalid_file_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_invalid_file_path</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_invalid_file_path" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_file_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check invalid logger's path</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_logging_level">
+    
+  </a>
+  <a name="test_invalid_logging_level">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_invalid_logging_level</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_invalid_logging_level" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_invalid_logging_level">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check invalid logger's level</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_creation">
+    
+  </a>
+  <a name="test_logger_creation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_logger_creation</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_logger_creation" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_creation">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check creation logger</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_formatter">
+    
+  </a>
+  <a name="test_logger_formatter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_logger_formatter</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_logger_formatter" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_formatter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check logger's ftm</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_handlers">
+    
+  </a>
+  <a name="test_logger_handlers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_logger_handlers</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_logger_handlers" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_handlers">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check logger's handlers</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_level">
+    
+  </a>
+  <a name="test_logger_level">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_logger_level</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_logger_level" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_level">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check logger's level</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_max_bytes_and_backup_count">
+    
+  </a>
+  <a name="test_logger_max_bytes_and_backup_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_logger_max_bytes_and_backup_count</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_logger_max_bytes_and_backup_count" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_max_bytes_and_backup_count">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check logger's max_bytes and backup_count</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_name">
+    
+  </a>
+  <a name="test_logger_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_logger_name</span><span class="function-signature">(self)</span>:
+    
+    <a class="headerLink" href="#test_logger_name" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.test_logger_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Check logger's name</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.backup_count">
+    
+  </a>
+  <a name="backup_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">backup_count</span>: SecretStr =
+    
+    <a class="headerLink" href="#backup_count" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.backup_count">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Maximum number of files</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.datefmt">
+    
+  </a>
+  <a name="datefmt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">datefmt</span>: SecretStr =
+    
+    <a class="headerLink" href="#datefmt" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.datefmt">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Time format</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.fmt">
+    
+  </a>
+  <a name="fmt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fmt</span>: SecretStr =
+    
+    <a class="headerLink" href="#fmt" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.fmt">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Log message format</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.level">
+    
+  </a>
+  <a name="level">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">level</span>: SecretStr =
+    
+    <a class="headerLink" href="#level" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.level">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Minimum level for creating a log</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span>: logging.Logger =
+    
+    <a class="headerLink" href="#logger" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Object for logging</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.max_bytes">
+    
+  </a>
+  <a name="max_bytes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">max_bytes</span>: SecretStr =
+    
+    <a class="headerLink" href="#max_bytes" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.max_bytes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Maximum file size in bytes</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span>: SecretStr =
+    
+    <a class="headerLink" href="#name" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Name of the log file</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.path">
+    
+  </a>
+  <a name="path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">path</span>: SecretStr =
+    
+    <a class="headerLink" href="#path" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Path of the log files</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.temp_dir">
+    
+  </a>
+  <a name="temp_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">temp_dir</span> =
+    
+    <a class="headerLink" href="#temp_dir" title="Taro_Telegram_Bot.tests.test_app_core_logger.TestLogger.temp_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>tempfile.TemporaryDirectory</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for Taro_Telegram_Bot,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    23.9.1 at 2023-12-18 07:18:08.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

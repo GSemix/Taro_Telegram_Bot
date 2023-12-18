@@ -19,7 +19,7 @@ from typing import Optional
 from utils.helper import get_log
 from utils.helper import isInt
 
-class ClientPotgreSQL(object):
+class ClientPostgreSQL(object):
     """
     PostgreSQL client for database interactions.
 
@@ -157,6 +157,8 @@ class ClientPotgreSQL(object):
                     result = await connection.fetchrow(query, *args)
                     if result:
                         result = dict(result)
+                    else:
+                        result = {}
         except asyncpg.PostgresError as e:
             self.logger.error(get_log('-', e)) if self.logger else None
         self.logger.debug(get_log('+', f"<query>: {query}, <args>: {args}, <result>: {result}")) if self.logger else None
