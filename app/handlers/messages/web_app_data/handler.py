@@ -44,7 +44,6 @@ async def web_app_data(webAppMes: Message, dp: Dispatcher, bot_name: Optional[st
 
         id = int(webAppMes.from_user.id)
         data = loads(webAppMes.web_app_data.data)
-        print(data)
 
         logger.info(get_log_with_id(id = id, s = '=', text = f"web_app_data: {data}"))
 
@@ -60,8 +59,8 @@ async def web_app_data(webAppMes: Message, dp: Dispatcher, bot_name: Optional[st
                 else:
                     await send_block_message(bot = bot, message = webAppMes)
                     logger.warning(get_log_with_id(id = id, s = '?', text = "Detected user without ACCESS"))
-            except CancelledError as e:
-                print(e)
+            except CancelledError:
+                pass
             except Exception as e:
                 await send_error_message(bot = bot, message = webAppMes, e = e)
                 logger.error(get_log_with_id(id = id, s = '-', text = f"Error: {e}"))
