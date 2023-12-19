@@ -18,7 +18,7 @@ function choise_type_taro(item_name) {
 // Асинхронная функция для получения типов таро с внешнего API.
 async function get_types_taro() {
         // Отправка запроса на получение типов таро с внешнего API.
-    await fetch('https://digitalplatforms.su/api_taro/get_types_taro')
+    await fetch('https://hse-server.tw1.ru/api_taro/get_types_taro')
     .then((data) => {
         // Преобразование ответа в формат JSON.
         return data.json()

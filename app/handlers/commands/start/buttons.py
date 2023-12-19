@@ -18,7 +18,7 @@ def get_cmd_start_buttons() -> ReplyKeyboardMarkup:
 
 	keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
 
-	button = KeyboardButton("Выбрать тип расклада", web_app=WebAppInfo(url="https://d04c-2001-ac8-59-202-97dd-9040-8716-18.ngrok-free.app"))
+	button = KeyboardButton("Выбрать тип расклада", web_app=WebAppInfo(url="https://hse-server.tw1.ru/taro_page_choise_type/"))
 	keyboard.add(button)
 
 	return keyboard
