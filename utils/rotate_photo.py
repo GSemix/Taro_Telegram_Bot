@@ -38,7 +38,7 @@ if __name__=="__main__":
 
     # Проходится по каждой карте из списка cards.json, из input_path получает output_path и с помощью функции flip_upside_down переворачивает на 180 градусов каждую карту и сохраняет их в отдельные файлы по адресу output_path
 
-    for key, value in get_json_data("../data/cards.json").items():
+    for value in get_json_data("../data/cards.json").values():
         input_image_path = "../" + value["image"]
         output_image_path = value["image"].split("/")
         output_image_path[-1] = "flip_" + output_image_path[-1]
