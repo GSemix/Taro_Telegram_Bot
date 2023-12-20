@@ -15,7 +15,7 @@ async def startup_event(api_logger: logging.Logger) -> None:
     """
     Body of event startup.
 
-    :param api_logger: Logger instance for logging shutdown information.
+    :param api_logger: Logger instance for logging startup information.
     :type api_logger: logging.Logger
     """
 
@@ -29,7 +29,7 @@ def setup(app: FastAPI, logger: logging.Logger) -> None:
 
     :param app: Object of FastAPI.
     :type app: FastAPI
-    :param logger: Logger instance for logging shutdown information.
+    :param logger: Logger instance for logging startup information.
     :type logger: logging.Logger
     """
 
