@@ -6,7 +6,7 @@ from aiogram.types import InlineKeyboardMarkup
 from aiogram.types import InlineKeyboardButton
 from aiogram.types.web_app_info import WebAppInfo
 
-def send_show_message() -> ReplyKeyboardMarkup:
+def send_show_message() -> InlineKeyboardMarkup:
 	"""
 	Generates and returns custom keyboard buttons for show cards.
 
