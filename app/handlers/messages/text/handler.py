@@ -80,9 +80,9 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 		if await isAccess(bd = bd, id = id):
 			logger.info(get_log_with_id(id = id, s = '=', text = f"Text message: {text}"))
 			try:
-				await send_show_message(bot = bot, message = message)
+				await send_show_message(bot = bot, message = message, reply_to_message_id = message.message_id)
 
-				"""count_cards = 5
+				count_cards = 5
 
 				if await inState(bd = bd, id = id, value = "cards_\d+"):
 					state = await get_state(bd = bd, id = id)
@@ -228,7 +228,7 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 					else:
 						raise Exception(f"dall-e (bad get request -> {response.status_code})")
 				else:
-					await send_bad_request_message(bot = bot, message = message, text = check, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)"""
+					await send_bad_request_message(bot = bot, message = message, text = check, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)
 			except CancelledError:
 				pass
 			except Exception as e:
