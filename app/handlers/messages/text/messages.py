@@ -11,6 +11,7 @@ from aiogram import types
 from aiogram.types import Message
 
 from custom_classes import Bot_
+from .buttons import get_show_buttons
 
 async def send_taro_message(bot: Bot_, message: Message, text: str, photo: bytes, action: str, action_message_id: int, reply_to_message_id: int) -> None:
 	"""
@@ -77,12 +78,23 @@ async def send_bad_request_message(bot: Bot_, message: Message, text: str, actio
 	:type action_message_id: int
 	:param reply_to_message_id: The ID of the message to reply to.
 	:type reply_to_message_id: int
-	:return: None
 	"""
 
 	await bot.send_message(message.from_user.id, text = text, action = action, action_message_id = action_message_id, reply_to_message_id = reply_to_message_id)
 
+async def send_show_message(bot: Bot_, message: Message, reply_to_message_id: int) -> None:
+	"""
+	Sends a show cards message.
 
+	:param bot: The bot instance.
+	:type bot: Bot\_
+	:param message: The original message.
+	:type message: Message
+	:param reply_to_message_id: The ID of the message to reply to.
+	:type reply_to_message_id: int
+	"""
+
+	await bot.send_message(message.from_user.id, text = "Тестовый расклад", reply_markup = get_show_buttons(), reply_to_message_id = reply_to_message_id)
 
 
 

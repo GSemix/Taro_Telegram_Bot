@@ -24,6 +24,7 @@ from . import check_quest
 from .messages import send_taro_message
 from .messages import send_cards_message
 from .messages import send_bad_request_message
+from .messages import send_show_message
 
 from app.utils.postgresql.users import isAccess
 from app.utils.postgresql.users import isState
@@ -79,7 +80,9 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 		if await isAccess(bd = bd, id = id):
 			logger.info(get_log_with_id(id = id, s = '=', text = f"Text message: {text}"))
 			try:
-				count_cards = 5
+				await send_show_message(bot = bot, message = message)
+
+				"""count_cards = 5
 
 				if await inState(bd = bd, id = id, value = "cards_\d+"):
 					state = await get_state(bd = bd, id = id)
@@ -225,9 +228,9 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 					else:
 						raise Exception(f"dall-e (bad get request -> {response.status_code})")
 				else:
-					await send_bad_request_message(bot = bot, message = message, text = check, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)
-			except CancelledError as e:
-				print(e)
+					await send_bad_request_message(bot = bot, message = message, text = check, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)"""
+			except CancelledError:
+				pass
 			except Exception as e:
 				await send_error_message(bot = bot, message = message, e = e, action = action, action_message_id = action_message_id)
 				logger.error(get_log_with_id(id = id, s = '-', text = e))
