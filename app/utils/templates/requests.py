@@ -19,7 +19,7 @@ def json_requests() -> Dict[str, Any]:
     return {
         "id": 0,
         "user_id": 0,
-        "cards": []
+        "cards": [],
         "request": "",
         "response": ""
     }
