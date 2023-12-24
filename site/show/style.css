@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /*background-color: #1a1a1a; */
     background-image: url('back_1.png'); /* Путь к фоновому изображению */
     background-size: cover;
     background-repeat: no-repeat;
