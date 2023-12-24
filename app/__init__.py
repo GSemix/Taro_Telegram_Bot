@@ -41,6 +41,7 @@ from .core.logger import get_logger
 from postgresql import ClientPostgreSQL
 from utils.helper import get_log
 from .utils.templates.users import table_users
+from .utils.templates.requests import table_requests
 
 async def set_default_commands(dp: Dispatcher):
     """
@@ -67,6 +68,7 @@ async def start_bd(bd_var: ClientPostgreSQL):
 
     await bd_var.create_pool()
     await bd_var.check_table(**table_users())
+    await bd_var.check_table(**table_requests())
 
 async def on_startup(dp: Dispatcher):
     """

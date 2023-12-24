@@ -1,3 +1,7 @@
+url = new URL(window.location.href);
+
+type_page = url.searchParams.get('num');
+
 document.addEventListener('DOMContentLoaded', () => {
     const magicTextElements = document.querySelectorAll('.magic-text');
     const divider = document.querySelector('.divider');
