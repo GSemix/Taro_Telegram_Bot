@@ -49,11 +49,13 @@ h1 {
     margin: 50px auto;
 }
 
-@keyframes fadeIn {
+@keyframes scaleUp {
     from {
+        transform: scale(0.8);
         opacity: 0;
     }
     to {
+        transform: scale(1);
         opacity: 1;
     }
 }
@@ -65,8 +67,8 @@ h1 {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для карт */
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
-    animation: fadeIn 0.8s ease-out forwards; /* Применяем анимацию проявления */
-    animation-delay: calc(var(--card-index) * 0.1s); /* Задержка анимации для последовательного эффекта */
+    animation: scaleUp 1s ease-out forwards; /* Применяем анимацию масштабирования */
+    animation-delay: calc(var(--card-index) * 0.2s); /* Задержка анимации для последовательного эффекта */
     opacity: 0; /* Начальное состояние - полностью прозрачное */
 }
 
