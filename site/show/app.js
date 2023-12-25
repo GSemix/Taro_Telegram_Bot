@@ -4,10 +4,6 @@ url = new URL(window.location.href);
 
 id = url.searchParams.get('id');
 
-// Объявление переменной tg, получающей доступ к боту.
-let tg = window.Telegram.WebApp;
-url = new URL(window.location.href);
-
 document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.text-background');
 
