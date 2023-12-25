@@ -1,14 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('back_1.png'); /* Путь к фоновому изображению */
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center; /* Центрирование изображения по горизонтали и вертикали */
+    background-position: center center;
+    z-index: -1; /* Установить фон позади всего контента */
+}
+
+body, html {
+    height: 100%; /* Высота для корректного отображения фона */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
     text-align: center;
-    color: #ffffff; /* Белый цвет текста */
+    color: #ffffff;
+    position: relative; /* Для корректной работы с абсолютно позиционированным фоном */
+    overflow-x: hidden; /* Предотвращение горизонтальной прокрутки */
 }
 
 h1 {
