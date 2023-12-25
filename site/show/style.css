@@ -1,79 +1,35 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-    color: #333;
-}
-
-h1, h2 {
-    color: #444;
-    text-shadow: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around; /* Равномерно распределяет карты */
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .card {
-    flex-grow: 1;
-    flex-basis: calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex: 1; /* Карта растягивается, чтобы занять доступное пространство */
+    max-width: calc(50% - 20px); /* Максимальная ширина карты */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 5px; /* Добавляет немного пространства вокруг каждой карты */
     background-color: white;
     opacity: 0;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card img {
+    width: 100%; /* Изображение карты занимает всю ширину блока .card */
+    height: auto; /* Сохраняет пропорции изображения */
+}
+
+@media (max-width: 600px) {
+    .card {
+        max-width: calc(100% - 10px); /* Для очень маленьких экранов карты занимают всю ширину */
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
     .card {
         animation: flyFromSide 0.8s ease-out forwards;
         animation-delay: calc(var(--card-index) * 0.1s);
-    }
-}
-
-.divider {
-    height: 2px;
-    background-color: #ffcc00;
-    width: 50%;
-    margin: 20px auto;
-}
-
-.magic-text:before {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: #ffcc00;
-    width: 50%;
-    margin: 20px auto;
-}
-
-.text-background {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    color: #ffffff;
-}
-
-@keyframes flyFromSide {
-    0% {
-        transform: scale(0.5) translateX(var(--start-position));
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1) translateX(0);
-        opacity: 1;
     }
 }
