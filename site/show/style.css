@@ -106,7 +106,7 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
     animation: flyFromSide 1.5s ease-in-out forwards alternate;
-    animation-delay: calc(var(--card-index) * 0.1s);
+    animation-delay: calc(var(--card-index) * 0.8s);
     opacity: 0; /* Скрыть карты до начала анимации */
 }
 
