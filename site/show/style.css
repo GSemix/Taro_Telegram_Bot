@@ -17,10 +17,6 @@ h1 {
     /* Удаление тени текста для лучшей совместимости */
 }
 
-#request {
-    padding-top: 2vh;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
