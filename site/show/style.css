@@ -49,6 +49,15 @@ h1 {
     margin: 50px auto;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .card {
     flex-grow: 1;
     flex-basis: calc(33% - 20px); /* 3 карты в строке для широких экранов */
@@ -56,8 +65,9 @@ h1 {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для карт */
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
-    /* Удаление анимации */
-    opacity: 1; /* Карты сразу видимы */
+    animation: fadeIn 0.8s ease-out forwards; /* Применяем анимацию проявления */
+    animation-delay: calc(var(--card-index) * 0.1s); /* Задержка анимации для последовательного эффекта */
+    opacity: 0; /* Начальное состояние - полностью прозрачное */
 }
 
 .card img {
