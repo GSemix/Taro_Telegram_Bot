@@ -16,7 +16,7 @@ def get_show_buttons() -> InlineKeyboardMarkup:
 
 	keyboard = InlineKeyboardMarkup(resize_keyboard=True)
 
-	button = InlineKeyboardButton("Выбрать тип расклада", web_app=WebAppInfo(url="https://hse-server.tw1.ru/taro_page_show/?num=1"))
+	button = InlineKeyboardButton("Выбрать тип расклада", web_app=WebAppInfo(url="https://hse-server.tw1.ru/taro_page_show/?id=1"))
 	keyboard.add(button)
 
 	return keyboard
