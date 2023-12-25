@@ -66,11 +66,11 @@ h1 {
 
 .magic-text {
     opacity: 0; /* Начальное состояние - невидимый */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* Плавная анимация видимости и перемещения */
+    transition: opacity 1.2s ease, transform 1.2s ease; /* Плавная анимация видимости и перемещения */
 }
 
 .magic-text.visible {
-    animation: fadeIn 0.8s ease forwards; /* Анимация появления */
+    animation: fadeIn 1.2s ease forwards; /* Анимация появления */
 }
 
 @keyframes pullDown {
