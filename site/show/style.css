@@ -99,10 +99,10 @@ h1 {
 
 .card {
     flex-grow: 1;
-    flex-basis: calc(50% - 20px); /* 3 карты в строке для широких экранов */
-    max-width: calc(50% - 20px);
+    flex-basis: calc(33% - 20px); /* 3 карты в строке для широких экранов */
+    max-width: calc(33% - 20px);
     
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
     animation: flyFromSide 0.8s ease-out forwards;
