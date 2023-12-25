@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('back_1.png'); /* Путь к фоновому изображению */
+    /*background-image: url('back_1.png'); /* Путь к фоновому изображению */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; /* Центрирование изображения по горизонтали и вертикали */
     text-align: center;
-    color: #ffffff; /* Белый цвет текста */
+    color: #1C1C1C; /* Белый цвет текста */
 }
 
 h1 {
