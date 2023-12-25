@@ -1,34 +1,19 @@
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-image: url('back_1.png'); /* Путь к фоновому изображению */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    z-index: -1; /* Установить фон позади всего контента */
-}
-
-body, html {
-    height: 100%; /* Высота для корректного отображения фона */
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
+    background-position: center center; /* Центрирование изображения по горизонтали и вертикали */
     text-align: center;
-    color: #ffffff;
-    position: relative; /* Для корректной работы с абсолютно позиционированным фоном */
-    overflow-x: hidden; /* Предотвращение горизонтальной прокрутки */
+    color: #ffffff; /* Белый цвет текста */
 }
 
 h1 {
     font-family: Georgia, serif; /* Шрифт для заголовков */
     color: #ffcc00; /* Золотистый цвет для заголовков */
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Тень для текста */
+    /* Удаление тени текста для лучшей совместимости */
 }
 
 #request {
@@ -50,10 +35,10 @@ h1 {
 }
 
 .text-background {
-    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный белый фон */
-    padding: 15px; /* Отступы вокруг текста для лучшей читаемости */
-    margin-bottom: 20px; /* Дополнительное пространство под текстом */
-    border-radius: 5px; /* Немного закруглённые углы для эстетики */
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Закругленные углы */
 }
 
 .divider {
@@ -68,9 +53,9 @@ h1 {
     flex-basis: calc(33% - 20px); /* 3 карты в строке для широких экранов */
     max-width: calc(33% - 20px);
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Убрать анимацию */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для карт */
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
+    /* Удаление анимации */
     opacity: 1; /* Карты сразу видимы */
 }
 
@@ -78,4 +63,3 @@ h1 {
     max-width: 100%;
     height: auto;
 }
-
