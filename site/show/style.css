@@ -2,23 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* background-image: url('back_1.png'); /* Путь к фоновому изображению */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center; /* Центрирование изображения по горизонтали и вертикали */
+    background-color: #f4f4f4;
     text-align: center;
-    color: #ffffff; /* Белый цвет текста */
+    color: #333;
 }
 
-h1 {
-    font-family: Georgia, serif; /* Шрифт для заголовков */
-    color: #ffcc00; /* Золотистый цвет для заголовков */
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Тень для текста */
-}
-
-#request {
-    padding-top: 2vh;
+h1, h2 {
+    color: #444;
+    text-shadow: none;
 }
 
 .container {
@@ -32,14 +23,48 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex-grow: 1;
+    flex-basis: calc(50% - 20px); /* Две карты в строке для всех размеров экрана */
+    max-width: calc(50% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    animation: flyFromSide 0.8s ease-out forwards;
+    animation-delay: calc(var(--card-index) * 0.1s);
+    opacity: 0;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.divider {
+    height: 2px;
+    background-color: #ffcc00;
+    width: 50%;
+    margin: 20px auto;
+    animation: pullDown 0.5s ease-in-out infinite alternate;
+}
+
+.magic-text:before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #ffcc00;
+    width: 50%;
+    margin: 20px auto;
 }
 
 .text-background {
-    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный белый фон */
-    padding: 15px; /* Отступы вокруг текста для лучшей читаемости */
-    margin-bottom: 20px; /* Дополнительное пространство под текстом */
-    border-radius: 5px; /* Немного закруглённые углы для эстетики */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #ffffff;
 }
 
 @keyframes flyFromSide {
@@ -53,78 +78,13 @@ h1 {
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.magic-text {
-    opacity: 0; /* Начальное состояние - невидимый */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* Плавная анимация видимости и перемещения */
-}
-
-.magic-text.visible {
-    animation: fadeIn 0.8s ease forwards; /* Анимация появления */
-}
-
 @keyframes pullDown {
     0%, 100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(5px); /* Небольшое смещение вниз */
+        transform: translateY(5px);
     }
 }
 
-.divider {
-    height: 2px;
-    background-color: #ffcc00;
-    width: 50%;
-    margin: 50px auto;
-    animation: pullDown 0.5s ease-in-out infinite alternate; /* Непрерывная анимация */
-}
-
-.divider-request {
-    height: 2px;
-    background-color: #ffcc00;
-    width: 50%;
-    margin: 50px auto;
-}
-
-.card {
-    flex-grow: 1;
-    flex-basis: calc(33% - 20px); /* 3 карты в строке для широких экранов */
-    max-width: calc(33% - 20px);
-    
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
-    animation: flyFromSide 0.8s ease-out forwards;
-    animation-delay: calc(var(--card-index) * 0.1s);
-    opacity: 0; /* Скрыть карты до начала анимации */
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 900px) {
-    .card {
-        flex-basis: calc(50% - 20px); /* 2 карты в строке */
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 600px) {
-    .card {
-        flex-basis: calc(50% - 20px); /* 1 карта в строке */
-        max-width: calc(50% - 20px);
-    }
-}
+/* Медиа-запросы могут быть опущены, так как теперь две карты отображаются в строке на всех размерах экрана */
