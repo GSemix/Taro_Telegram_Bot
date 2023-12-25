@@ -28,18 +28,19 @@ h1, h2 {
 
 .card {
     flex-grow: 1;
-    flex-basis: calc(50% - 20px); /* Две карты в строке для всех размеров экрана */
+    flex-basis: calc(50% - 20px);
     max-width: calc(50% - 20px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
-    animation: flyFromSide 0.8s ease-out forwards;
-    animation-delay: calc(var(--card-index) * 0.1s);
     opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.card img {
-    max-width: 100%;
-    height: auto;
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        animation: flyFromSide 0.8s ease-out forwards;
+        animation-delay: calc(var(--card-index) * 0.1s);
+    }
 }
 
 .divider {
@@ -47,7 +48,6 @@ h1, h2 {
     background-color: #ffcc00;
     width: 50%;
     margin: 20px auto;
-    animation: pullDown 0.5s ease-in-out infinite alternate;
 }
 
 .magic-text:before {
@@ -77,14 +77,3 @@ h1, h2 {
         opacity: 1;
     }
 }
-
-@keyframes pullDown {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-}
-
-/* Медиа-запросы могут быть опущены, так как теперь две карты отображаются в строке на всех размерах экрана */

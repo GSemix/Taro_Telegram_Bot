@@ -26,4 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     handleScrollAnimation();
     window.addEventListener('scroll', handleScrollAnimation);
+
+    // Активация анимаций только после полной загрузки страницы
+    window.onload = () => {
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateX(0)';
+        });
+    };
 });
