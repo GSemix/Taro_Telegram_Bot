@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function get_content() {
+    console.log(1)
     await fetch('https://hse-server.tw1.ru/api_taro/get_taro_answer/' + id)
     .then((data) => {
         return data.json()
@@ -50,9 +51,11 @@ async function get_content() {
                         document.getElementById("content").innerHTML = response['data'];
                 }
     })
+    console.log(2)
 }
 
 window.onload = function() {
+        console.log(0)
         get_content()
 }
 
