@@ -2,14 +2,23 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    /* background-image: url('back_1.png'); /* Путь к фоновому изображению */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; /* Центрирование изображения по горизонтали и вертикали */
     text-align: center;
-    color: #333;
+    color: #ffffff; /* Белый цвет текста */
 }
 
-h1, h2 {
-    color: #444;
-    text-shadow: none;
+h1 {
+    font-family: Georgia, serif; /* Шрифт для заголовков */
+    color: #ffcc00; /* Золотистый цвет для заголовков */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Тень для текста */
+}
+
+#request {
+    padding-top: 2vh;
 }
 
 .container {
@@ -21,50 +30,16 @@ h1, h2 {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
-}
-
-.card {
-    flex: 1; /* Карта растягивается, чтобы занять доступное пространство */
-    max-width: calc(50% - 20px); /* Максимальная ширина карты */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 5px; /* Добавляет немного пространства вокруг каждой карты */
-    background-color: white;
-    opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .card {
-        animation: flyFromSide 0.8s ease-out forwards;
-        animation-delay: calc(var(--card-index) * 0.1s);
-    }
-}
-
-.divider {
-    height: 2px;
-    background-color: #ffcc00;
-    width: 50%;
-    margin: 20px auto;
-}
-
-.magic-text:before {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: #ffcc00;
-    width: 50%;
-    margin: 20px auto;
+    margin-bottom: 50px;
 }
 
 .text-background {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный белый фон */
+    padding: 15px; /* Отступы вокруг текста для лучшей читаемости */
+    margin-bottom: 20px; /* Дополнительное пространство под текстом */
+    border-radius: 5px; /* Немного закруглённые углы для эстетики */
 }
 
 @keyframes flyFromSide {
@@ -77,3 +52,66 @@ h1, h2 {
         opacity: 1;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.magic-text {
+    opacity: 0; /* Начальное состояние - невидимый */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Плавная анимация видимости и перемещения */
+}
+
+.magic-text.visible {
+    animation: fadeIn 0.8s ease forwards; /* Анимация появления */
+}
+
+@keyframes pullDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px); /* Небольшое смещение вниз */
+    }
+}
+
+.divider {
+    height: 2px;
+    background-color: #ffcc00;
+    width: 50%;
+    margin: 50px auto;
+    animation: pullDown 0.5s ease-in-out infinite alternate; /* Непрерывная анимация */
+}
+
+.divider-request {
+    height: 2px;
+    background-color: #ffcc00;
+    width: 50%;
+    margin: 50px auto;
+}
+
+.card {
+    flex-grow: 1;
+    flex-basis: calc(50% - 20px); /* 3 карты в строке для широких экранов */
+    max-width: calc(50% - 20px);
+    
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
+    animation: flyFromSide 0.8s ease-out forwards;
+    animation-delay: calc(var(--card-index) * 0.1s);
+    opacity: 0; /* Скрыть карты до начала анимации */
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+

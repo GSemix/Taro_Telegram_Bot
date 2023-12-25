@@ -1,3 +1,9 @@
+// Объявление переменной tg, получающей доступ к боту.
+let tg = window.Telegram.WebApp;
+url = new URL(window.location.href);
+
+type_page = url.searchParams.get('num');
+
 document.addEventListener('DOMContentLoaded', () => {
     const magicTextElements = document.querySelectorAll('.magic-text');
     const divider = document.querySelector('.divider');
@@ -12,26 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handleScrollAnimation = () => {
-        let magicTextVisible = false;
-
         magicTextElements.forEach((el) => {
             if (elementInView(el, 150)) {
                 displayScrollElement(el);
-                magicTextVisible = true;
             }
         });
 
-        divider.style.animation = magicTextVisible ? 'none' : '';
+        // Управление анимацией разделителя
+        const magicTextVisible = Array.from(magicTextElements).some(el => elementInView(el, 150));
+        if (magicTextVisible) {
+            divider.style.animation = 'none'; // Отключить анимацию, если текст виден
+        } else {
+            divider.style.animation = ''; // Включить анимацию, если текст скрыт
+        }
     };
 
+    // Вызываем анимации появления текста и управление анимацией разделителя при первоначальной загрузке
     handleScrollAnimation();
-    window.addEventListener('scroll', handleScrollAnimation);
 
-    // Активация анимаций только после полной загрузки страницы
-    window.onload = () => {
-        document.querySelectorAll('.card').forEach(card => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateX(0)';
-        });
-    };
+    // Отслеживаем событие прокрутки для анимаций текста и разделителя
+    window.addEventListener('scroll', handleScrollAnimation);
 });
