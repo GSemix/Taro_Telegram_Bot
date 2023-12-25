@@ -2,7 +2,7 @@
 let tg = window.Telegram.WebApp;
 url = new URL(window.location.href);
 
-type_page = url.searchParams.get('num');
+id = url.searchParams.get('id');
 
 // Объявление переменной tg, получающей доступ к боту.
 let tg = window.Telegram.WebApp;
@@ -12,8 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.text-background');
 
     const elementInView = (el, offset = 0) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return elementTop <= ((window.innerHeight || document.documentElement.clientHeight) - offset);
+        const elementRect = el.getBoundingClientRect();
+        const elementTop = elementRect.top;
+        const elementBottom = elementRect.bottom;
+
+        // Проверяем, находится ли элемент частично или полностью в области видимости
+        return (
+            elementTop + offset < window.innerHeight && 
+            elementBottom - offset > 0
+        );
     };
 
     const displayElement = (element) => {
@@ -32,3 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScrollAnimation();
     window.addEventListener('scroll', handleScrollAnimation);
 });
+
+async function get_content() {
+    await fetch('https://hse-server.tw1.ru/api_taro/get_taro_answer/' + id)
+    .then((data) => {
+        return data.json()
+    })
+    .then(response => {
+                if (document.getElementById("content")) {
+                        document.getElementById("content").innerHTML = response['data'];
+                }
+    })
+}
+
+window.onload = function() {
+        get_content()
+}
+
+
+
+
+
+
+
+

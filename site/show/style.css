@@ -69,7 +69,7 @@ h1 {
 
 .fade-in {
     opacity: 0; /* Начальное состояние - полностью прозрачное */
-    animation: fadeIn 1s ease-out forwards; /* Применяем анимацию проявления */
+    animation: fadeIn 1.2s ease-out forwards; /* Применяем анимацию проявления */
 }
 
 .card {

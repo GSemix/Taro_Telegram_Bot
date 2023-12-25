@@ -11,6 +11,14 @@ Can start from console: uvicorn --host 127.0.0.1 --port 3100 api:app --workers 1
 :type api_logger: logging.Logger
 :var api_logger_cfg: Configuration for logger
 :type api_logger_cfg: ApiConfig
+:var postgresql_cfg: An instance of PostgreSQLConfig used for configuring PostgreSQL settings
+:type postgresql_cfg: PostgreSQLConfig
+:var postgres_logger_cfg: An instance of PostgreSQLLoggingConfig used for configuring PostgreSQL logging settings
+:type postgres_logger_cfg: PostgreSQLLoggingConfig
+:var postgres_logger: A logger for PostgreSQL interactions, configured using postgres_logger_cfg settings
+:type postgres_logger: logging.Logger
+:var bd: An instance of ClientPotgreSQL with PostgreSQLConfig settings and PostgreSQL logger
+:type bd: ClientPotgreSQL
 :var app: Object of FastAPI
 :type app: FastAPI
 """
@@ -19,10 +27,14 @@ from fastapi import FastAPI
 from fastapi import Request
 from fastapi import Response
 
+from postgresql import ClientPostgreSQL
 from .core.config import ApiConfig
 from .core.config import ApiLoggingConfig
+from .core.config import PostgreSQLLoggingConfig
+from .core.config import PostgreSQLConfig
 from .core.logger import get_logger
 from utils.helper import get_log
+from app.utils.templates.requests import table_requests
 
 async def log_stuff(request: Request, call_next: callable) -> Response:
     """
@@ -43,6 +55,11 @@ async def log_stuff(request: Request, call_next: callable) -> Response:
 api_cfg = ApiConfig()
 api_logger_cfg = ApiLoggingConfig()
 api_logger = get_logger(**api_logger_cfg.dict())
+
+postgresql_cfg = PostgreSQLConfig()
+postgres_logger_cfg = PostgreSQLLoggingConfig()
+postgres_logger = get_logger(**postgres_logger_cfg.dict())
+bd = ClientPostgreSQL(postgresql_cfg.dict(), postgres_logger)
 
 app = FastAPI()
 app.logger = api_logger

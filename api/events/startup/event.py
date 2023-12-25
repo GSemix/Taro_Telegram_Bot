@@ -8,10 +8,12 @@ import logging
 # Импортируем функцию для логирования из файла со вспомогательными функциями
 
 from utils.helper import get_log
+from postgresql import ClientPostgreSQL
+from app import start_bd
 
 # Функция записывающая информацию о начале работы
 
-async def startup_event(api_logger: logging.Logger) -> None:
+async def startup_event(api_logger: logging.Logger, bd: ClientPostgreSQL) -> None:
     """
     Body of event startup.
 
@@ -19,11 +21,13 @@ async def startup_event(api_logger: logging.Logger) -> None:
     :type api_logger: logging.Logger
     """
 
+    await start_bd(bd_var = bd)
+
     api_logger.info(get_log(s = "+", text = f"<-Start->"))
 
 # Функция вызывающаяся при старте и вызывающая событие записывающее информацию о старте с помощью функции startup_event
 
-def setup(app: FastAPI, logger: logging.Logger) -> None:
+def setup(app: FastAPI, logger: logging.Logger, bd: ClientPostgreSQL) -> None:
     """
     Func for setup startup_event.
 
@@ -31,12 +35,14 @@ def setup(app: FastAPI, logger: logging.Logger) -> None:
     :type app: FastAPI
     :param logger: Logger instance for logging startup information.
     :type logger: logging.Logger
+    :param bd: An instance of the ClientPotgreSQL class representing the PostgreSQL database.
+    :type bd: ClientPostgreSQL  
     """
 
      # Инициализируем функцию startup_event внутри основной функции
 
     async def startup_event_() -> None:
-        await startup_event(api_logger = logger)
+        await startup_event(api_logger = logger, bd = bd)
 
     # Выполняем событие записи информации о запуске
 
