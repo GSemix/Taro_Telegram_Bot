@@ -62,8 +62,8 @@ h1 {
 
 .card {
     flex-grow: 1;
-    flex-basis: calc(33% - 20px); /* 3 карты в строке для широких экранов */
-    max-width: calc(33% - 20px);
+    flex-basis: calc(30% - 20px); /* 3 карты в строке для широких экранов */
+    max-width: calc(30% - 20px);
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для карт */
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
