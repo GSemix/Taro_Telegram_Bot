@@ -43,12 +43,10 @@ h1 {
 }
 
 @keyframes flyFromSide {
-    0% {
-        transform: scale(0.5) translateX(var(--start-position));
+    from {
         opacity: 0;
     }
-    100% {
-        transform: scale(1) translateX(0);
+    to {
         opacity: 1;
     }
 }
@@ -97,16 +95,16 @@ h1 {
     margin: 50px auto;
 }
 
+
 .card {
     flex-grow: 1;
     flex-basis: calc(33% - 20px); /* 3 карты в строке для широких экранов */
     max-width: calc(33% - 20px);
-    
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный темный фон для карт */
-    animation: flyFromSide 1.5s ease-in-out forwards alternate;
-    animation-delay: calc(var(--card-index) * 0.8s);
+    animation: flyFromSide 0.5s ease-out forwards;
+    animation-delay: calc(var(--card-index) * 0.1s);
     opacity: 0; /* Скрыть карты до начала анимации */
 }
 

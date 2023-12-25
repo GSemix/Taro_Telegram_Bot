@@ -6,7 +6,6 @@ type_page = url.searchParams.get('num');
 
 document.addEventListener('DOMContentLoaded', () => {
     const magicTextElements = document.querySelectorAll('.magic-text');
-    const divider = document.querySelector('.divider');
 
     const elementInView = (el, offset = 0) => {
         const elementTop = el.getBoundingClientRect().top;
@@ -23,19 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayScrollElement(el);
             }
         });
-
-        // Управление анимацией разделителя
-        const magicTextVisible = Array.from(magicTextElements).some(el => elementInView(el, 150));
-        if (magicTextVisible) {
-            divider.style.animation = 'none'; // Отключить анимацию, если текст виден
-        } else {
-            divider.style.animation = ''; // Включить анимацию, если текст скрыт
-        }
     };
 
-    // Вызываем анимации появления текста и управление анимацией разделителя при первоначальной загрузке
+    // Вызываем анимации появления текста при первоначальной загрузке
     handleScrollAnimation();
 
-    // Отслеживаем событие прокрутки для анимаций текста и разделителя
+    // Отслеживаем событие прокрутки для анимации текста
     window.addEventListener('scroll', handleScrollAnimation);
 });
