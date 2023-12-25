@@ -80,7 +80,8 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 		if await isAccess(bd = bd, id = id):
 			logger.info(get_log_with_id(id = id, s = '=', text = f"Text message: {text}"))
 			try:
-				await send_show_message(bot = bot, message = message, reply_to_message_id = message.message_id)
+				if await isAdmin(bd = bd, id = id):
+					await send_show_message(bot = bot, message = message, reply_to_message_id = message.message_id)
 
 				count_cards = 5
 
