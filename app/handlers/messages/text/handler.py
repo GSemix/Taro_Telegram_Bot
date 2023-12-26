@@ -178,7 +178,7 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 
 					request_id = await set_request(bd = bd, item = {
 							"user_id": id,
-							"cards": random_cards,
+							"cards": [card['image'] for card in random_cards.values()],
 							"request": text,
 							"response": chat
 						}
