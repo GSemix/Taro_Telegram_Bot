@@ -43,7 +43,7 @@ def get_taro_answer(bd: ClientPostgreSQL):
             for name in item['cards']:
                 data += f"""
                 <div class="card" style="--card-index:{counter_cards}; --start-position:{(-1)**counter_cards*1000}vw;">
-                    <img src="images/{name}" alt="Карта {counter_cards}">
+                    <img src="{name}" alt="Карта {counter_cards}">
                 </div>"""
                 counter_cards += 1
 
