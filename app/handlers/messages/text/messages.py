@@ -82,7 +82,7 @@ async def send_bad_request_message(bot: Bot_, message: Message, text: str, actio
 
 	await bot.send_message(message.from_user.id, text = text, action = action, action_message_id = action_message_id, reply_to_message_id = reply_to_message_id)
 
-async def send_show_message(bot: Bot_, message: Message, reply_to_message_id: int) -> None:
+async def send_show_message(bot: Bot_, message: Message, request_id: int, action: str, action_message_id: str, reply_to_message_id: int) -> None:
 	"""
 	Sends a show cards message.
 
@@ -90,11 +90,17 @@ async def send_show_message(bot: Bot_, message: Message, reply_to_message_id: in
 	:type bot: Bot\_
 	:param message: The original message.
 	:type message: Message
+	:param request_id: The id of request.
+	:type request_id: int
+	:param action: The action to be performed.
+	:type action: str
+	:param action_message_id: The ID of the message to associate with the action.
+	:type action_message_id: int
 	:param reply_to_message_id: The ID of the message to reply to.
 	:type reply_to_message_id: int
 	"""
 
-	await bot.send_message(message.from_user.id, text = "Тестовый расклад", reply_markup = get_show_buttons(), reply_to_message_id = reply_to_message_id)
+	await bot.send_message(message.from_user.id, text = "Тестовый расклад", action = action, action_message_id = action_message_id, reply_to_message_id = reply_to_message_id, reply_markup = get_show_buttons(request_id = request_id))
 
 
 

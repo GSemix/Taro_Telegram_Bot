@@ -6,7 +6,7 @@ from aiogram.types import InlineKeyboardMarkup
 from aiogram.types import InlineKeyboardButton
 from aiogram.types.web_app_info import WebAppInfo
 
-def get_show_buttons() -> InlineKeyboardMarkup:
+def get_show_buttons(request_id: int) -> InlineKeyboardMarkup:
 	"""
 	Generates and returns custom keyboard buttons for show cards.
 
@@ -16,7 +16,7 @@ def get_show_buttons() -> InlineKeyboardMarkup:
 
 	keyboard = InlineKeyboardMarkup(resize_keyboard=True)
 
-	button = InlineKeyboardButton("Выбрать тип расклада", web_app=WebAppInfo(url="https://hse-server.tw1.ru/taro_page_show/?id=1"))
+	button = InlineKeyboardButton("Выбрать тип расклада", web_app=WebAppInfo(url=f"https://hse-server.tw1.ru/taro_page_show/?id={request_id}"))
 	keyboard.add(button)
 
 	return keyboard

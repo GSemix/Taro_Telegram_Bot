@@ -81,16 +81,6 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 		if await isAccess(bd = bd, id = id):
 			logger.info(get_log_with_id(id = id, s = '=', text = f"Text message: {text}"))
 			try:
-				if await isAdmin(bd = bd, id = id):
-					await send_show_message(bot = bot, message = message, reply_to_message_id = message.message_id)
-					item = {
-						"user_id": 1,
-						"cards": ["images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png"],
-						"request": "На деньги",
-						"response": "qweqweqweqeqeqeqeqewqeqeqeqweqweq"
-					}
-					print(await set_request(bd = bd, item = item))
-
 				count_cards = 5
 
 				if await inState(bd = bd, id = id, value = "cards_\d+"):
@@ -186,7 +176,16 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 						logger.warning(get_log_with_id(id = id, s = '-', text = f"Неизвестная ошибка -> {e}"))
 						raise Exception(f"{model_gpt} analyze_cards ({e})")
 
-					prompt = None
+					request_id = await set_request(bd = bd, item = {
+							"user_id": id,
+							"cards": ["images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png"],
+							"request": text,
+							"response": chat
+						}
+					)
+					await send_show_message(bot = bot, message = message, request_id = request_id, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)
+
+					"""prompt = None
 					try:
 						connector = ProxyConnector.from_url(proxy_url)
 						async with ClientSession(connector=connector) as session:
@@ -236,6 +235,7 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 						await send_taro_message(bot = bot, message = message, text = chat, photo = response.content, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)
 					else:
 						raise Exception(f"dall-e (bad get request -> {response.status_code})")
+					"""
 				else:
 					await send_bad_request_message(bot = bot, message = message, text = check, action = action, action_message_id = action_message_id, reply_to_message_id = message.message_id)
 			except CancelledError:
