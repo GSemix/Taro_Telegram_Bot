@@ -21,7 +21,7 @@ async def send_cmd_start_message(bot: Bot_, message: Message) -> None:
 	:type message: Message
 	"""
 
-	await bot.send_message(message.from_user.id, text = f"""👋 Привет, {message.from_user.username}. Добро пожаловать в мир таро!
+	await bot.send_photo(chat_id=message.chat.id, photo=open("images/Esmir.png", 'rb'), caption = f"""👋 Привет, {message.from_user.username}. Добро пожаловать в мир таро!
 
 🔮 <b>Я – Эсмеральда</b>, ваш надёжный гид в путешествии по картам судьбы.
 
@@ -30,3 +30,6 @@ async def send_cmd_start_message(bot: Bot_, message: Message) -> None:
 
 Пусть ваше путешествие будет полно открытий и прозрений! ✨
 		""", reply_markup=get_cmd_start_buttons(), parse_mode=types.ParseMode.HTML)
+
+
+
