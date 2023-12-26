@@ -4,6 +4,7 @@
 Messages for '/help'
 """
 
+from aiogram import types
 from aiogram.types import Message
 
 from custom_classes import Bot_
