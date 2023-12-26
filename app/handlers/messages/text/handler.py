@@ -32,6 +32,7 @@ from app.utils.postgresql.users import isAdmin
 from app.utils.postgresql.users import inState
 from app.utils.postgresql.users import get_state
 from app.utils.postgresql.users import update_state
+from app.utils.postgresql.requests import set_request
 
 from utils.helper import get_log_with_id
 from utils.file import get_json_data
@@ -82,6 +83,13 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 			try:
 				if await isAdmin(bd = bd, id = id):
 					await send_show_message(bot = bot, message = message, reply_to_message_id = message.message_id)
+					item = {
+						"user_id": 1,
+						"cards": ["images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png"],
+						"request": "На деньги",
+						"response": "qweqweqweqeqeqeqeqewqeqeqeqweqweq"
+					}
+					print(await set_request(bd = bd, item = item))
 
 				count_cards = 5
 
