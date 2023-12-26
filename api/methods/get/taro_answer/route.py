@@ -47,6 +47,7 @@ def get_taro_answer(bd: ClientPostgreSQL):
                 </div>"""
                 counter_cards += 1
 
+            response_formatted = item['response'].replace("\n", "<br>")
             data += f"""
             </div>
 
@@ -67,7 +68,7 @@ def get_taro_answer(bd: ClientPostgreSQL):
                 <div class="text-background">
                     <h1>Объяснение</h1>
                     <p>
-                    {item['response']}
+                    {response_formatted}
                     </p>
                 </div>
             </div>
