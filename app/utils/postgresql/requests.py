@@ -64,8 +64,7 @@ async def set_request(bd: ClientPostgreSQL, item: Dict[str, Any]) -> Optional[st
 
     result = await bd.append_item(
         table = table,
-        item = item,
-        returning_columns = ["id"]
+        item = item
     )
 
     return result
