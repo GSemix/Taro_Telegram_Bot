@@ -37,7 +37,7 @@ def table_requests() -> Dict[str, List[str]]:
     return {
         "table": "requests",
         "columns": [
-            "id BIGINT PRIMARY KEY",
+            "id serial PRIMARY KEY",
             "user_id BIGINT",
             "cards TEXT[] NOT NULL",
             "request TEXT",
