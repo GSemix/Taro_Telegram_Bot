@@ -19,10 +19,10 @@ import requests
 from asyncio.exceptions import CancelledError
 
 from . import analyze_cards
-from . import analyze_prompt
+#from . import analyze_prompt
 from . import check_quest
-from .messages import send_taro_message
-from .messages import send_cards_message
+#from .messages import send_taro_message
+#from .messages import send_cards_message
 from .messages import send_bad_request_message
 from .messages import send_show_message
 
@@ -143,7 +143,7 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 					raise Exception(f"{model_gpt} check_quest ({e})")
 
 				if "CORRECT" in check:
-					await send_cards_message(bot = bot, message = message, cards = random_cards, reply_to_message_id = message.message_id)
+					#await send_cards_message(bot = bot, message = message, cards = random_cards, reply_to_message_id = message.message_id)
 
 					chat = None
 					try:
@@ -178,7 +178,7 @@ async def handle_text(message: types.Message, dp: Dispatcher, bot_name: Optional
 
 					request_id = await set_request(bd = bd, item = {
 							"user_id": id,
-							"cards": ["images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png", "images/Шут.png"],
+							"cards": random_cards,
 							"request": text,
 							"response": chat
 						}
