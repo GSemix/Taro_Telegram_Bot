@@ -21,4 +21,4 @@ async def send_cmd_start_message(bot: Bot_, message: Message) -> None:
 	:type message: Message
 	"""
 
-	await bot.send_message(message.from_user.id, text = f"Привет, {message.from_user.username}! 👋", reply_markup=get_cmd_start_buttons() , parse_mode=types.ParseMode.HTML)
+	await bot.send_message(message.from_user.id, text = f"Привет, {message.from_user.username}! 👋", reply_markup=get_cmd_start_buttons(), parse_mode=types.ParseMode.HTML)

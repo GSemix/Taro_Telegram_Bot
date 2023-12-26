@@ -100,7 +100,7 @@ async def send_show_message(bot: Bot_, message: Message, request_id: int, action
 	:type reply_to_message_id: int
 	"""
 
-	await bot.send_message(message.from_user.id, text = "Тестовый расклад", action = action, action_message_id = action_message_id, reply_to_message_id = reply_to_message_id, reply_markup = get_show_buttons(request_id = request_id))
+	await bot.send_message(message.from_user.id, text = "<b>🧙‍♀ Расклад готов!</b>", action = action, action_message_id = action_message_id, reply_to_message_id = reply_to_message_id, reply_markup = get_show_buttons(request_id = request_id), parse_mode=types.ParseMode.HTML)
 
 
 
