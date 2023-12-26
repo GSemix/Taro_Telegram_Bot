@@ -50,7 +50,7 @@ async def get_request_by_id(bd: ClientPostgreSQL, id: int) -> Optional[Dict[str,
 
 # Добавляет новый запрос в базу данных. Принимает словарь с информацией о запросе. Возвращает результат операции или None
 
-async def set_request(bd: ClientPostgreSQL, item: Dict[str, Any]) -> Optional[str]:
+async def set_request(bd: ClientPostgreSQL, item: Dict[str, Any]) -> Optional[int]:
     """
     Adds a new request to the database.
 
@@ -58,13 +58,17 @@ async def set_request(bd: ClientPostgreSQL, item: Dict[str, Any]) -> Optional[st
     :type bd: ClientPostgreSQL
     :param item: Request information as a dictionary.
     :type item: Dict[str, Any]
-    :return: Result of the operation or None.
-    :rtype: Optional[str]
+    :return: Id of appended item or None.
+    :rtype: Optional[int]
     """
 
     result = await bd.append_item(
         table = table,
-        item = item
+        item = item,
+        returning_columns = ["id"]
     )
 
-    return result
+    if result:
+        return result[0]["id"]
+
+    return None
